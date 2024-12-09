@@ -3,3 +3,10 @@ module(
     version = "1.0.0",  # Keep in sync with version.bzl
     compatibility_level = 1,
 )
+
+bazel_dep(name = "rules_python", version = "0.40.0")
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.11",
+    ignore_root_user_error = True, # https://github.com/bazelbuild/rules_python/issues/1169
+)

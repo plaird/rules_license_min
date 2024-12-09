@@ -2,5 +2,6 @@
 
 This is a temporary fork of rules_license because I have been having issues with the
   rules_python dependency of rules_license.
-Python is only used by internal tools of rules_license, so by stripping out all but the
-  public facing components of rules_license I hope to avoid issues. 
+I removed the explicit reference to rules_python to try and get through my issues.
+
+Also, rules_license is still not fully migrated to bzlmod, so that may be part of the issue too.
